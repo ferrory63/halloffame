@@ -1,9 +1,9 @@
 import React from 'react'
-import { IUsers } from '../../App'
+import { IUser } from '../../App'
 import { TableRow } from '../tableRow'
 
 interface TableCompProps {
-    users: IUsers[]
+    users: IUser[]
 }
 
 export const TableComp: React.FC<TableCompProps> = ({ users }) => {

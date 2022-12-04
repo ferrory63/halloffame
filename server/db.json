@@ -1,0 +1,24 @@
+{
+  "persons": [
+    {
+      "firstName": "Илья",
+      "secondName": "Илья",
+      "id": 1
+    },
+    {
+      "firstName": "Сергей",
+      "secondName": "Сергей",
+      "id": 2
+    },
+    {
+      "firstName": "Иван",
+      "secondName": "Иван",
+      "id": 3
+    },
+    {
+      "firstName": "Григорий",
+      "secondName": "Григорий",
+      "id": 4
+    }
+  ]
+}
