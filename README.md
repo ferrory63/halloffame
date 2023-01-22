@@ -1,4 +1,4 @@
-Стек : React TS, CRA, RTK, React-hook-form.
+Стек : React TS, CRA, RTK, React-hook-form, Portals.
 Приложение позовляет взаимодействовать с сущностью сотрдник, поддерживает CRUD операции.
 
 ## Available Scripts
