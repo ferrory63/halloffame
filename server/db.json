@@ -1,24 +1,14 @@
 {
   "persons": [
     {
-      "firstName": "Илья",
-      "secondName": "Илья",
-      "id": 1
-    },
-    {
-      "firstName": "Сергей",
-      "secondName": "Сергей",
+      "firstName": "SERGEI",
+      "secondName": "SERGIO",
       "id": 2
     },
     {
-      "firstName": "Иван",
-      "secondName": "Иван",
+      "firstName": "lox-pidor-chmo",
+      "secondName": "indiyskiy",
       "id": 3
-    },
-    {
-      "firstName": "Григорий",
-      "secondName": "Григорий",
-      "id": 4
     }
   ]
 }

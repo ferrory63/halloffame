@@ -1,6 +1,7 @@
 import React from 'react'
 import { IUser } from '../../App'
 import { TableRow } from '../tableRow'
+import './style.css'
 
 interface TableCompProps {
     users: IUser[]
@@ -8,7 +9,7 @@ interface TableCompProps {
 
 export const TableComp: React.FC<TableCompProps> = ({ users }) => {
     return (
-        <table className="table">
+        <table>
             <thead>
                 <tr>
                     <th scope="col"></th>
@@ -21,6 +22,7 @@ export const TableComp: React.FC<TableCompProps> = ({ users }) => {
                 {users.map((obj) => {
                     return (
                         <TableRow
+                            key={obj.id}
                             id={obj.id}
                             firstName={obj.firstName}
                             secondName={obj.secondName}

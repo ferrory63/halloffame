@@ -31,12 +31,10 @@ const usersSlice = createSlice({
     initialState,
     reducers: {
         addUser(state, action: PayloadAction<IUser>) {
-            state.users.push(action.payload)
+            state.users = [...state.users, action.payload]
         },
         removeUser(state, action: PayloadAction<number>) {
-            // state.users = state.users.filter((obj) => {
-            //     obj.id !== action.payload
-            // })
+            state.users = state.users.filter((obj) => obj.id !== action.payload)
         },
         editUser(state, action: PayloadAction<IUser>) {
             const userFind = state.users.find(

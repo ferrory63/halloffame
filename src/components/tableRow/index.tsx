@@ -1,4 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import { ModalDelete } from '../modalDelete'
+import { ModalEdit } from '../modalEdit'
+import { Portal } from '../portal'
+import './style.css'
 
 interface TableRowProps {
     id: number
@@ -11,6 +16,9 @@ export const TableRow: React.FC<TableRowProps> = ({
     secondName,
     id,
 }) => {
+    const [deleteShow, setDeleteShow] = useState(false)
+    const [editShow, setEditShow] = useState(false)
+
     return (
         <tr>
             <th>
@@ -24,13 +32,14 @@ export const TableRow: React.FC<TableRowProps> = ({
             <td>{firstName}</td>
             <td>{secondName}</td>
             <td>
-                <div>
+                <div className="buttons_block">
                     <div>
                         <img
                             width={20}
                             height={20}
                             src="/icons/edit.svg"
                             alt="edit"
+                            onClick={() => setEditShow(true)}
                         />
                     </div>
                     <div>
@@ -39,7 +48,24 @@ export const TableRow: React.FC<TableRowProps> = ({
                             height={20}
                             src="/icons/delete.svg"
                             alt="delete"
+                            onClick={() => setDeleteShow(true)}
                         />
+                        <Portal wrapper="del">
+                            <ModalDelete
+                                active={deleteShow}
+                                setActive={setDeleteShow}
+                                id={id}
+                            />
+                        </Portal>
+                        <Portal wrapper="edit">
+                            <ModalEdit
+                                active={editShow}
+                                setActive={setEditShow}
+                                id={id}
+                                firstName={firstName}
+                                secondName={secondName}
+                            />
+                        </Portal>
                     </div>
                 </div>
             </td>

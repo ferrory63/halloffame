@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
 import './App.css'
+import { Modal } from './components/modal/modal'
+import { Portal } from './components/portal'
 import { TableComp } from './components/table'
 import { fetchUsers } from './redux/slices/users'
 import { useAppDispatch, useAppSelector } from './redux/store'
@@ -13,6 +14,7 @@ export interface IUser {
 
 function App() {
     const dispatch = useAppDispatch()
+    const [active, setActive] = useState(false)
     const { users } = useAppSelector((state) => state.users)
 
     const getUsers = async () => {
@@ -24,13 +26,17 @@ function App() {
     }, [])
 
     return (
-        <div className="App">
-            <div className="App">
-                <div className="wrapper">
-                    <TableComp users={users} />
-                </div>
+        <>
+            <div className="wrapper">
+                <button onClick={() => setActive(true)}>
+                    Добавить пользователя
+                </button>
+                <TableComp users={users} />
+                <Portal wrapper="add">
+                    <Modal active={active} setActive={setActive} />
+                </Portal>
             </div>
-        </div>
+        </>
     )
 }
 

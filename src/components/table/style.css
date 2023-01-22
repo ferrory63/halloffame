@@ -1,0 +1,6 @@
+table {
+    margin: 20px;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid #08454A;;}
